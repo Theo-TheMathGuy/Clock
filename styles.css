@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --s: min(1vh, 1vw);
+    --c-fr: white;
+    --c-bg: black;
+    --c-sh: rgb(255, 0, 0);
+    --c-mh: rgb(30, 255, 0);
+    --c-hh: rgb(0, 17, 255);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--c-bg);
+}
+
+main {
+    width: calc(80 * var(--s));
+    aspect-ratio: 1 / 1;
+    border: 2px solid var(--c-fr);
+    border-radius: calc(40 * var(--s));
+    position: relative;
+}
+
+main * {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.dot {
+    background-color: var(--c-fr);
+    width: 5px;
+    height: 5px;
+    border-radius: 2.5px;
+}
+
+.little-dot {
+    transform: rotate(calc(var(--i) * 6deg)) translateY(calc(-37 * var(--s))) translate(-50%, -50%);
+}
+
+.big-dot {
+    transform: rotate(calc(var(--i) * 30deg)) translateY(calc(-37* var(--s))) translate(-50%, -50%) scale(2);
+}
+
+.center {
+    width: 20px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--c-fr);
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+}
+
+.hand {
+    width: 8px;
+    background-color: var(--c-fr);
+    border-radius: 4px;
+    transform-origin: 50% 100%;
+
+    box-shadow: 0px 0px 5px var(--c), 0px 0px 10px var(--c), 0px 0px 15px var(--c), 0px 0px 20px var(--c);
+}
+
+#seconds-hand {
+    height: calc(35 * var(--s));
+    background-color: var(--c-sh);
+    --c: var(--c-sh);
+}
+
+#minutes-hand {
+    height: calc(30 * var(--s));
+    background-color: var(--c-mh);
+    --c: var(--c-mh);
+}
+
+#hours-hand {
+    height: calc(22 * var(--s));
+    background-color: var(--c-hh);
+    --c: var(--c-hh);
+}
+
+#timestamp {
+    font-family: Consolas;
+    font-size: calc(3.5 * var(--s));
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%);
+    color: var(--c-fr);
+}
